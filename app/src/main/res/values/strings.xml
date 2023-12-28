@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Silvy</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string name="service_description">Service for tracking taps, abusing AccessibilityService</string>
+
+    <string name="main_show_how_to_title">Welcome!</string>
+    <string name="main_show_how_to_body">Please enable the accessesavailaiity service to enjoy this thing.</string>
+    <string name="main_goto_settings">Go To Settings</string>
+    <string name="main_celebrate_2024">Demonstrate Effect</string>
+</resources>
