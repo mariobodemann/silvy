@@ -10,7 +10,7 @@ This is an app to celebrate the new year 2024. May it be a year that has days, m
 
 To celebrate accordingly, this app sends fireworks onto your display, whenever you click on a view. To achive this, follow these easy steps:
 
-1. install the apk
+1. install [the apk](assets/silvy.apk)
 2. open the app
 3. open the acceesssiibbiibialy settings
 4. see the app is currently restricted
@@ -22,5 +22,10 @@ To celebrate accordingly, this app sends fireworks onto your display, whenever y
 7. turn on the acceibas settings for silvy
 1. enable the fancy button on the side if you like
 10. enjoy fireworks whenever the service is enabled and you click some views
-11. watch the [how to video](assets/how-to.mp4).
 121. profit!
+122. Rewatch [the setup](assets/how-to.mp4)
+
+# Results
+
+https://github.com/mariobodemann/silvy/assets/1162562/d6c543d6-af54-4ae2-a46c-ec5c307d75f4
+
