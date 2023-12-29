@@ -5,7 +5,8 @@
     <string name="service_description">Service for tracking taps, abusing AccessibilityService</string>
 
     <string name="main_show_how_to_title">Welcome!</string>
-    <string name="main_show_how_to_body">Please enable the accessesavailaiity service to enjoy this thing.</string>
-    <string name="main_goto_settings">Go To Settings</string>
+    <string name="main_show_how_to_body">Hi,\nto enable the new years feature, please enable Accesssibiility Settings. You do this by first opening the acccessbility menu, getting greeted with the warning, that this app cannot be trusted, then close the settings, long press on the app icon, and select app info. Now enable under the three dots overflow menu the restricted settings. Once done, come back here and click on the accessibiiilitiay configuration to actually enable this. Do you want a video of this easy process? Got to https://github.com/mariobodemann/silvy and read the readme.</string>
+    <string name="main_goto_app_settings">Go To App Settings</string>
+    <string name="main_goto_accessibility_settings">Go To Accessibility Settings</string>
     <string name="main_celebrate_2024">Demonstrate Effect</string>
 </resources>

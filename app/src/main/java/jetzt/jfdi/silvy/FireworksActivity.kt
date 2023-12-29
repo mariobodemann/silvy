@@ -1,10 +1,15 @@
 package jetzt.jfdi.silvy
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.pm.LauncherApps.ShortcutQuery
+import android.content.pm.ShortcutManager
 import android.graphics.Rect
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
@@ -45,6 +50,7 @@ import kotlin.math.roundToInt
 
 
 class FireworksActivity : ComponentActivity() {
+    @SuppressLint("WrongThread")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val bounds = intent.getIntArrayExtra("rect").toRect()
@@ -60,12 +66,8 @@ class FireworksActivity : ComponentActivity() {
                 HowToAccessibilityInfo()
             }
         }
-    }
-}
 
-private fun openAccessibilitySettings(context: Context) {
-    val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-    context.startActivity(intent)
+    }
 }
 
 @Composable
@@ -161,7 +163,7 @@ fun HowToAccessibilityInfo() {
             color = MaterialTheme.colorScheme.background
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(16.dp)
             ) {
                 Text(
                     modifier = Modifier.padding(vertical = 16.dp),
@@ -171,19 +173,39 @@ fun HowToAccessibilityInfo() {
                 )
                 Text(
                     modifier = Modifier.padding(vertical = 16.dp),
-                    fontSize = 42.sp,
+                    fontSize = 20.sp,
                     text = stringResource(id = R.string.main_show_how_to_body)
                 )
 
                 Button(
                     modifier = Modifier.fillMaxWidth(),
+                    onClick = { openAppSettings(context) }
+                ) {
+                    Text(text = stringResource(id = R.string.main_goto_app_settings))
+                }
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
                     onClick = { openAccessibilitySettings(context) }
                 ) {
-                    Text(text = stringResource(id = R.string.main_goto_settings))
+                    Text(text = stringResource(id = R.string.main_goto_accessibility_settings))
                 }
             }
         }
     }
+}
+
+private fun openAppSettings(context: Context) {
+    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+    val uri = Uri.fromParts("package", context.packageName, null)
+    intent.setData(uri)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+    context.startActivity(intent)
+}
+
+private fun openAccessibilitySettings(context: Context) {
+    val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+    context.startActivity(intent)
 }
 
 private fun IntArray?.toRect(): Rect =
